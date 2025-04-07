@@ -26,10 +26,9 @@ public class HeapSort<T extends Comparable<T>> implements ListSorter<T> {
 
     public void repair(IList<T> heap, int i, int n) {
         int idxOfChildrenOne=2*i+1;
-        int idxOfChildrenTwo=2*i+2;
 
         if(idxOfChildrenOne<n) {
-            if(idxOfChildrenTwo<n && heap.get(idxOfChildrenOne).compareTo(heap.get(idxOfChildrenTwo)) < 0) {
+            if(idxOfChildrenOne+1<n && heap.get(idxOfChildrenOne).compareTo(heap.get(idxOfChildrenOne+1)) < 0) {
                 idxOfChildrenOne++;
             }
 
